@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <p>Select a file</p>
+                    <form class="requires-validation" novalidate method="post" action="/index">
+
+
+                       <div class="col-md-12">
+                            <select class="form-select mt-3" name="selection" required>
+                                  <option selected disabled value="">Select a File</option>
+                                  {% for filename in filenames %}
+                                  <option value="{{filename}}">{{filename}}</option>
+                                  {% endfor %}
+                           </select>
+
+                       </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
